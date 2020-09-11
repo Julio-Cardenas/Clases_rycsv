@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="turtle_init" value="true"/>
+    <arg name="rviz_init" default="true"/>
+    
+    <!--This command start turtlesim-->>
+    <node 
+        if = "$(arg turtle_init)"
+        pkg="turtlesim" 
+        type="turtlesim_node" 
+        name="toto" 
+    />
+
+     <node 
+        if = "$(arg rviz_init)"
+        pkg="rviz" 
+        type="rviz" 
+        name="visual" 
+    />
+
+</launch>
